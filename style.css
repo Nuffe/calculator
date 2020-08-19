@@ -1,0 +1,142 @@
+.container{ 
+    width: 340px;
+    height: 900px;
+    background-color: none;
+    margin: 0px 0px 0px 40%;
+}
+.outline{
+        padding: 0px 0 0 0;
+    margin: 200px 0 0 0;
+    width: 100%;
+    height: 420px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #3a3a3a;
+}
+
+  
+  .display{
+    position: relative;
+    top: 22px;
+    left: 30px;
+    background: #449e446b;
+    width: 282px;
+    height: 91px;
+    z-index: 0;
+    border-radius: 20px;
+  }
+  
+
+.number{
+    font-size: 33px;
+    border-style: none;
+}
+
+
+.number-grid{
+    position: relative;
+    top: 45px;
+    left: 16px;
+}
+
+.calc{
+    position: relative;
+    top: 20px;
+    font-size: 29px;
+    padding: 0 0px 0 10px;
+}
+.calcdiv{
+    width: 255px;
+    height: 55px;
+}
+.sum{
+    font-size: 45px;
+}
+
+.sumdiv{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 220px;
+    bottom: 10px;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 70px 70px 70px 70px;
+    grid-template-rows: 45px 45px 45px 45px 45px;
+    gap: 10px 10px;
+    grid-template-areas: "reset back divide multiply" "seven eight nine minus" "four five six add" "one two three equal" "zero zero dot equal";
+  }
+  
+  .reset {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: ". . ." ". . .";
+    grid-area: reset;
+  }
+  
+  .back {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: ". . ." ". . .";
+    grid-area: back;
+  }
+  
+  .divide {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: ". . ." ". . .";
+    grid-area: divide;
+  }
+  
+  .multiply { grid-area: multiply; }
+  
+  .seven {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: ". . ." ". . .";
+    grid-area: seven;
+  }
+  
+  .eight {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: ". . ." ". . .";
+    grid-area: eight;
+  }
+  
+  .zero { grid-area: zero; }
+  
+  .dot { grid-area: dot; }
+  
+  .equal { grid-area: equal; }
+  
+  .one { grid-area: one; }
+  
+  .two { grid-area: two; }
+  
+  .three { grid-area: three; }
+  
+  .add { grid-area: add; }
+  
+  .six { grid-area: six; }
+  
+  .five { grid-area: five; }
+  
+  .four { grid-area: four; }
+  
+  .nine { grid-area: nine; }
+  
+  .minus { grid-area: minus; }
