@@ -12,6 +12,7 @@
     border: 1px solid black;
     border-radius: 20px;
     background-color: #3a3a3a;
+    box-shadow: 5px 8px 0px 5px #2d2c2c;
 }
 
   
@@ -25,17 +26,33 @@
     z-index: 0;
     border-radius: 20px;
   }
-  
+  .version{
+    position: relative;
+    top: 40px;
+    left: 216px;
+  }
 
 .number{
-    font-size: 33px;
-    border-style: none;
+  font-size: 33px;
+  border-style: none;
+  box-shadow: 0px 5px 0px 0px #bbb8b8;
+}
+.number:active{
+  position: relative;
+  top: 2px;
+  box-shadow: 0px 1px 0px 1px #7d7a7a;
+  padding: 0px 0px 0 0;
+  margin: 2px 0px 0 0px;
+}
+
+.number:focus{
+  outline:none;
 }
 
 
 .number-grid{
     position: relative;
-    top: 45px;
+    top: 33px;
     left: 16px;
 }
 
@@ -44,6 +61,7 @@
     top: 20px;
     font-size: 29px;
     padding: 0 0px 0 10px;
+    word-break: break-all;
 }
 .calcdiv{
     width: 255px;
