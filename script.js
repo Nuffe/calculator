@@ -21,15 +21,34 @@ return a / b
 const operate = function(a, b) {  //behöver göra så att knapptryck lägger till vilken typ som ska användas
 return chosen(test,test2)
 }
+let firstAdd= []
+let screen = 0
+const button = document.querySelectorAll(".math")
+let adding = function(e) {
+
+screen = document.querySelector(".calc").textContent += [e.target.name]
+} //screen får med sig täknena +-* på grund av att de visas på skärmen.
+  // måste skilja dessa två på något sätt
+
+let buttons = button.forEach((buttons) => buttons.addEventListener("click", adding))
 
 
-const button = document.querySelectorAll("button")
-console.log(button)
-
-someFunction = function(e) {
-   console.log(e.target.name)
-let test =   document.querySelector(".calc").textContent += e.target.name
-console.log(test)
+const change = document.querySelectorAll(".change")
+let changing = function(e){
+   if(e.target.name == "add"){
+   console.log(screen)   
+   firstAdd.push(screen)
+   screen = 0
+   document.querySelector(".calc").textContent += ["+"]
+   console.log(screen)
+   
+   }
+console.log(firstAdd)
+if(e.target.name == "equal"){
+   console.log(firstAdd[1])
 }
 
-let buttons = button.forEach((buttons) => buttons.addEventListener("click", someFunction))
+
+
+}
+let changer = change.forEach((buttons) => buttons.addEventListener("click", changing))
