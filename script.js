@@ -1,85 +1,42 @@
 
-const add = function(a,b) {
-   sum = a + b}
-const subtract = function(a,b) {
-   sum = a - b }
-const multiply = function(a,b) {
-   sum = a * b}
-const divide = function(a,b) {
-   sum = a / b}
+let array =[];
+let number = "";
+let operateArray = []
 
-const operate = function(a, b) {  
-return chosen(test,test2)
+let adding = function(e){
+   document.querySelector(".calc").textContent += e.target.name
+   number += e.target.name
+   number = parseInt(number)
+   console.log(number)
+}
+let changing = function(e){ //adding operator and number to differend arrays
+   number == "" ? number = 0 : false
+   document.querySelector(".calc").textContent += e.target.value  
+   number !== 0 ? array.push(number) : false
+   operateArray.push(e.target.name)
+   number = ""
 }
 
-let firstAdd= [];
-let screen = 0;
-let number = ""
-let sum = 0
-let operator = "none"
 
-let adding = function(e) {
-document.querySelector(".calc").textContent += [e.target.name]
-number += e.target.name
-number = parseInt(number)
+let final = function(e){
+operateArray.length == (array.length) ? array.push(number) : false  
+number = 0
+let sum = array[0]
+for(i = 0; i < operateArray.length; i++){
+operateArray[i] == "add" ? sum += array[i+1] : false
+operateArray[i] == "sub" ? sum -= array[i+1] : false
+operateArray[i] == "multiply" ? sum *= array[i+1] : false
+operateArray[i] == "divide"  && array[i+1] !== 0 ? sum /= array[i+1] : false
+}
+document.querySelector(".sum").textContent = Math.round(sum * 10) / 10
 }
 
- 
+
+
 const button = document.querySelectorAll(".math")
-let buttons = button.forEach((buttons) => buttons.addEventListener("click", adding))
-
-
 const change = document.querySelectorAll(".change")
-let changing = function(e){
+const equal= document.querySelectorAll(".equal")
 
-
-if(e.target.name == "add"){  
-   firstAdd.push(number)
-   document.querySelector(".calc").textContent += ["+"]   
-   number = 0;
-   operator = "add"
-   }
-else if (e.target.name == "sub"){  
-   firstAdd.push(number)
-   document.querySelector(".calc").textContent += ["-"]   
-   number = 0;
-   operator = "sub"
-}
-
-else if (e.target.name == "divide"){  
-   firstAdd.push(number)
-   document.querySelector(".calc").textContent += ["/"]   
-   number = 0;
-   operator = "divide"
-      }
-else if (e.target.name == "multiply"){  
-   firstAdd.push(number)
-   document.querySelector(".calc").textContent += ["x"]   
-   number = 0;
-   operator = "multiply"
-   }
-
-else if(e.target.name == "equal"){
-   firstAdd.push(number)
-   let a = firstAdd[0] 
-   let b = firstAdd[1]
- 
-   if(operator == "add"){
-      add(a,b)
-   }
-   else if(operator == "sub"){
-      subtract(a,b)
-   }
-   else if(operator == "multiply"){
-      multiply(a,b)
-   }
-   else if(operator == "divide"){
-      divide(a,b)
-   }
-   else if(operator == "none"){
-      sum = firstAdd[0]
-   }
-document.querySelector(".sum").textContent = sum
-   }
-}
-let changer = change.forEach((operator) => operator.addEventListener("click", changing))
+button.forEach((buttons) => buttons.addEventListener("click", adding))
+change.forEach((operator) => operator.addEventListener("click", changing))
+equal.forEach((operator) => operator.addEventListener("click", final))
