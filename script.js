@@ -31,12 +31,32 @@ operateArray[i] == "divide"  && array[i+1] !== 0 ? sum /= array[i+1] : false
 document.querySelector(".sum").textContent = Math.round(sum * 10) / 10
 }
 
+let remo = function(e){ //C button clears everything
+if (e.target.name == "clear" ) {
+   document.querySelector(".calc").textContent = "" ;
+   document.querySelector(".sum").textContent = " "
+   operateArray = [];
+   array = [];
+   number = ""; 
+}
+else if (e.target.name == "back") { // some way go backwards one step with number and operators
+
+console.log(array)
+console.log(operateArray)
+}
+
+}
 
 
 const button = document.querySelectorAll(".math")
 const change = document.querySelectorAll(".change")
-const equal= document.querySelectorAll(".equal")
+const equal = document.querySelectorAll(".equal")
+const remove = document.querySelectorAll(".remove")
 
 button.forEach((buttons) => buttons.addEventListener("click", adding))
 change.forEach((operator) => operator.addEventListener("click", changing))
 equal.forEach((operator) => operator.addEventListener("click", final))
+remove.forEach((operator) => operator.addEventListener("click", remo))
+
+
+
