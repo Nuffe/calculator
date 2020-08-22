@@ -26,7 +26,16 @@ for(i = 0; i < operateArray.length; i++){
 operateArray[i] == "add" ? sum += array[i+1] : false
 operateArray[i] == "sub" ? sum -= array[i+1] : false
 operateArray[i] == "multiply" ? sum *= array[i+1] : false
-operateArray[i] == "divide"  && array[i+1] !== 0 ? sum /= array[i+1] : false
+
+if(operateArray[i] == "divide"){
+  if (array[i+1] == 0 ){
+   document.querySelector(".sum").textContent = 0
+   document.querySelector(".calc").textContent = "You wot m8"
+  }
+   else {sum /= array[i+1];
+   }
+}
+
 }
 document.querySelector(".sum").textContent = Math.round(sum * 10) / 10
 }
